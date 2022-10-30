@@ -57,7 +57,7 @@ function _lazygit_toggle()
     lazygit:toggle()
 end
 
-vim.keymap.set("n", "<space>g", "<cmd>lua _lazygit_toggle()<CR>", { noremap = true, silent = true })
+vim.keymap.set("n", "<space>gg", "<cmd>lua _lazygit_toggle()<CR>", { noremap = true, silent = true })
 
 
 -- default mappings but for visibility

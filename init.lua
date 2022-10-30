@@ -24,6 +24,7 @@ local default_options = {
     splitright = true,
     undodir = ".cache/undo",
     undofile = true,
+    colorcolumn = '80',
 }
 
 -- set the default options
