@@ -31,12 +31,14 @@ vim.keymap.set('n', '<space>fb', builtin.buffers, {})
 vim.keymap.set('n', '<space>fh', builtin.help_tags, {})
 
 -- setup the keymaps for the terminal
-require("toggleterm").setup {
+require('toggleterm').setup {
     open_mapping = [[<c-\>]],
 }
 
+-- setup the keys for the tree explorer
+vim.keymap.set('n', '<space>e', '<cmd>NvimTreeToggle<CR>', opts)
 
-local Terminal = require("toggleterm.terminal").Terminal
+local Terminal = require('toggleterm.terminal').Terminal
 local lazygit = Terminal:new {
     cmd = "lazygit",
     hidden = true,
@@ -57,7 +59,7 @@ function _lazygit_toggle()
     lazygit:toggle()
 end
 
-vim.keymap.set("n", "<space>gg", "<cmd>lua _lazygit_toggle()<CR>", { noremap = true, silent = true })
+vim.keymap.set('n', '<space>gg', '<cmd>lua _lazygit_toggle()<CR>', { noremap = true, silent = true })
 
 
 -- default mappings but for visibility

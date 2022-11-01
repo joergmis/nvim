@@ -28,6 +28,14 @@ require('packer').startup(function(use)
     use 'L3MON4D3/LuaSnip'
     use 'saadparwaiz1/cmp_luasnip'
 
+    use {
+        'nvim-tree/nvim-tree.lua',
+        requires = {
+            'nvim-tree/nvim-web-devicons', -- optional, for file icons
+        },
+        tag = 'nightly' -- optional, updated every week. (see issue #1193)
+    }
+
     -- treesitter
     use 'nvim-treesitter/nvim-treesitter'
 
@@ -80,16 +88,6 @@ require('packer').startup(function(use)
         'folke/twilight.nvim',
         config = function()
             require('twilight').setup {
-            }
-        end
-    }
-
-    -- highlight and search for todo / bug / hack comments
-    use {
-        'folke/todo-comments.nvim',
-        requires = 'nvim-lua/plenary.nvim',
-        config = function()
-            require('todo-comments').setup {
             }
         end
     }
@@ -180,3 +178,13 @@ cmp.setup.cmdline(':', {
 })
 
 require('hover.providers.lsp')
+
+
+vim.g.loaded_netrw = 1
+vim.g.loaded_netrwPlugin = 1
+
+-- set termguicolors to enable highlight groups
+vim.opt.termguicolors = true
+
+-- empty setup using defaults
+require("nvim-tree").setup()
