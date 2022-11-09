@@ -12,6 +12,8 @@ require('packer').startup(function(use)
     use { 'nvim-telescope/telescope-fzf-native.nvim',
         run = 'cmake -S. -Bbuild -DCMAKE_BUILD_TYPE=Release && cmake --build build --config Release && cmake --install build --prefix build' }
 
+    use 'https://git.sr.ht/~whynothugo/lsp_lines.nvim'
+
     -- terminal
     use "akinsho/toggleterm.nvim"
 
@@ -186,3 +188,9 @@ vim.opt.termguicolors = true
 
 -- empty setup using defaults
 require("nvim-tree").setup()
+
+-- Disable virtual_text since it's redundant due to lsp_lines.
+require("lsp_lines").setup()
+vim.diagnostic.config({
+    virtual_text = false,
+})
