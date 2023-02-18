@@ -30,19 +30,6 @@ vim.keymap.set('n', '<space>fg', builtin.live_grep, {})
 vim.keymap.set('n', '<space>fb', builtin.buffers, {})
 vim.keymap.set('n', '<space>fh', builtin.help_tags, {})
 
--- this also lets you return to vim by <esc> <C-t>
-vim.keymap.set('n', '<C-t>', '<cmd>exe v:count1 . "ToggleTerm"<CR>', opts)
-
-function _G.set_terminal_keymaps()
-	local termopts = { buffer = 0 }
-	vim.keymap.set('t', '<esc>', [[<C-\><C-n>]], termopts)
-	vim.keymap.set('t', 'jk', [[<C-\><C-n>]], termopts)
-	vim.keymap.set('t', '<C-h>', [[<Cmd>wincmd h<CR>]], termopts)
-	vim.keymap.set('t', '<C-j>', [[<Cmd>wincmd j<CR>]], termopts)
-	vim.keymap.set('t', '<C-k>', [[<Cmd>wincmd k<CR>]], termopts)
-	vim.keymap.set('t', '<C-l>', [[<Cmd>wincmd l<CR>]], termopts)
-end
-
 -- setup the keys for the tree explorer
 vim.keymap.set('n', '<space>e', '<cmd>NvimTreeToggle<CR>', opts)
 
