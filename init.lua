@@ -25,7 +25,7 @@ local default_options = {
     undodir = ".cache/undo",
     undofile = true,
     colorcolumn = '80',
-    clipboard = 'unnamed',
+    clipboard = "unnamed,unnamedplus",
 }
 
 -- set the default options
