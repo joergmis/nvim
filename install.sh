@@ -14,6 +14,7 @@ npm i -g vscode-langservers-extracted
 go install github.com/nametake/golangci-lint-langserver@latest
 go install github.com/golangci/golangci-lint/cmd/golangci-lint@latest
 go install golang.org/x/tools/gopls@latest
+go install github.com/jesseduffield/lazygit@latest
 
 npm i -g vscode-langservers-extracted
 npm i -g vscode-langservers-extracted

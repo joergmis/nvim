@@ -5,6 +5,9 @@ require('packer').startup(function(use)
 	-- colorscheme
 	use 'lunarvim/Onedarker.nvim'
 
+    use 'tpope/vim-fugitive'
+    use 'furkanzmc/zettelkasten.nvim'
+
 	use 'fatih/vim-go'
 
 	-- fuzzy search
