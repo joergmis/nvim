@@ -6,7 +6,10 @@ require('packer').startup(function(use)
 	use 'lunarvim/Onedarker.nvim'
 
     use 'tpope/vim-fugitive'
-    use 'furkanzmc/zettelkasten.nvim'
+    use {
+        'renerocksai/telekasten.nvim',
+        requires = {'nvim-telescope/telescope.nvim'}
+    }
 
 	use 'fatih/vim-go'
 
@@ -194,3 +197,12 @@ vim.diagnostic.config({
 
 vim.cmd [[autocmd BufWritePre * lua vim.lsp.buf.format()]]
 
+require('telekasten').setup({
+  home = vim.fn.expand("~/zettelkasten"),
+  template_new_note = vim.fn.expand('~/.config/nvim/templates/new_note.md'),
+  template_new_daily = vim.fn.expand('~/.config/nvim/templates/daily_note.md'),
+  template_new_weekly = vim.fn.expand('~/.config/nvim/templates/weekly_note.md'),
+  new_note_filename = 'uuid-title',
+  filename_space_subst = '_',
+  image_subdir = 'img'
+})

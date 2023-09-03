@@ -59,3 +59,21 @@ require('nvim_comment').setup {
 	-- Hook function to call before commenting takes place
 	hook = nil
 }
+
+-- Launch panel if nothing is typed after <leader>z
+vim.keymap.set("n", "<space>z", "<cmd>Telekasten panel<CR>")
+
+-- Most used functions
+vim.keymap.set("n", "<space>zf", "<cmd>Telekasten find_notes<CR>")
+vim.keymap.set("n", "<space>zg", "<cmd>Telekasten search_notes<CR>")
+vim.keymap.set("n", "<space>zd", "<cmd>Telekasten goto_today<CR>")
+vim.keymap.set("n", "<space>zz", "<cmd>Telekasten follow_link<CR>")
+vim.keymap.set("n", "<space>zn", "<cmd>Telekasten new_note<CR>")
+vim.keymap.set("n", "<space>zy", "<cmd>Telekasten yank_notelink<CR>")
+vim.keymap.set("n", "<space>zc", "<cmd>Telekasten show_calendar<CR>")
+vim.keymap.set("n", "<space>zb", "<cmd>Telekasten show_backlinks<CR>")
+vim.keymap.set("n", "<space>zI", "<cmd>Telekasten insert_img_link<CR>")
+vim.keymap.set("n", "<space>#", "<cmd>Telekasten show_tags<CR>")
+
+-- Call insert link automatically when we start typing a link
+vim.keymap.set("i", "[[", "<cmd>Telekasten insert_link<CR>")
