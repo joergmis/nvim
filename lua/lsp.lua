@@ -18,6 +18,12 @@ require 'lspconfig'.rust_analyzer.setup { capabilities = capabilities }
 require 'lspconfig'.tailwindcss.setup { capabilities = capabilities }
 require 'lspconfig'.tsserver.setup { capabilities = capabilities }
 
+require 'lspconfig'.clangd.setup { 
+    capabilities = capabilities,
+    -- see clangd --help
+    cmd = { "clangd", "--all-scopes-completion" }
+}
+
 require('lspconfig').yamlls.setup {
     capabilities = capabilities,
     settings = {
