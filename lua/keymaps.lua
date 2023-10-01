@@ -1,6 +1,6 @@
 local opts = {
-	noremap = true,
-	silent = true,
+    noremap = true,
+    silent = true,
 }
 
 local builtin = require('telescope.builtin')
@@ -15,7 +15,7 @@ vim.keymap.set('n', '<C-k>', '<cmd>lua vim.lsp.buf.signature_help()<CR>', opts)
 vim.keymap.set('n', '<space>wa', '<cmd>lua vim.lsp.buf.add_workspace_folder()<CR>', opts)
 vim.keymap.set('n', '<space>wr', '<cmd>lua vim.lsp.buf.remove_workspace_folder()<CR>', opts)
 vim.keymap.set('n', '<space>wl', '<cmd>lua print(vim.inspect(vim.lsp.buf.list_workspace_folders()))<CR>',
-	opts)
+    opts)
 vim.keymap.set('n', '<space>D', '<cmd>lua vim.lsp.buf.type_definition()<CR>', opts)
 vim.keymap.set('n', '<space>rn', '<cmd>lua vim.lsp.buf.rename()<CR>', opts)
 vim.keymap.set('n', 'gr', '<cmd>lua vim.lsp.buf.references()<CR>', opts)
@@ -34,7 +34,7 @@ vim.keymap.set('n', '<space>fh', builtin.help_tags, {})
 vim.keymap.set('n', '<space>e', '<cmd>NvimTreeToggle<CR>', opts)
 
 function _lazygit_toggle()
-	lazygit:toggle()
+    lazygit:toggle()
 end
 
 vim.keymap.set('n', '<space>gg', '<cmd>lua _lazygit_toggle()<CR>', { noremap = true, silent = true })
@@ -42,22 +42,22 @@ vim.keymap.set('n', '<space>gg', '<cmd>lua _lazygit_toggle()<CR>', { noremap = t
 
 -- default mappings but for visibility
 require('nvim_comment').setup {
-	-- Linters prefer comment and line to have a space in between markers
-	marker_padding = true,
-	-- should comment out empty or whitespace only lines
-	comment_empty = true,
-	-- trim empty comment whitespace
-	comment_empty_trim_whitespace = true,
-	-- Should key mappings be created
-	create_mappings = true,
-	-- Normal mode mapping left hand side
-	line_mapping = "gcc",
-	-- Visual/Operator mapping left hand side
-	operator_mapping = "gc",
-	-- text object mapping, comment chunk,,
-	comment_chunk_text_object = "ic",
-	-- Hook function to call before commenting takes place
-	hook = nil
+    -- Linters prefer comment and line to have a space in between markers
+    marker_padding = true,
+    -- should comment out empty or whitespace only lines
+    comment_empty = true,
+    -- trim empty comment whitespace
+    comment_empty_trim_whitespace = true,
+    -- Should key mappings be created
+    create_mappings = true,
+    -- Normal mode mapping left hand side
+    line_mapping = "gcc",
+    -- Visual/Operator mapping left hand side
+    operator_mapping = "gc",
+    -- text object mapping, comment chunk,,
+    comment_chunk_text_object = "ic",
+    -- Hook function to call before commenting takes place
+    hook = nil
 }
 
 -- Launch panel if nothing is typed after <leader>z

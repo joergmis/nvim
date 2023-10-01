@@ -1,8 +1,6 @@
 -- load the plugins
-require('plugins')
-
 -- load the lsp configuration
-require('lsp')
+require('plugins')
 require('keymaps')
 
 -- set color scheme
